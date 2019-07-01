@@ -1,0 +1,14 @@
+.body:hover {
+  background: #d01a5808;;
+}
+
+a {
+  color: #666;
+}
+
+li span {
+  font-size: .875rem;
+  font-weight: 400;
+  color: #999;
+  text-transform: uppercase;
+}

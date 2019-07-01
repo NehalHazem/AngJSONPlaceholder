@@ -1,0 +1,45 @@
+<div class="uk-container uk-margin-large-top">
+  <div class="uk-overflow-auto">
+
+    <table class="uk-table uk-table-small uk-table-divider">
+      <thead>
+        <tr style="color: #312450">
+          <th class="uk-text-center">ID</th>
+          <th class="uk-text-center">Name</th>
+          <th class="uk-text-center">Username</th>
+          <th class="uk-text-center">Email</th>
+          <th class="uk-text-center">Address</th>
+          <th class="uk-text-center">Phone no.</th>
+          <th class="uk-text-center">Website</th>
+          <th class="uk-text-center">Company's Name</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr class="body" *ngFor="let user of Users;">
+          <td class="uk-text-center">{{user.id || '...'}}</td>
+          <td class="uk-text-center">{{user.name || '...'}}</td>
+          <td class="uk-text-center">{{user.username || '...'}}</td>
+          <td class="uk-text-center">{{user.email || '...'}}</td>
+          <td class="uk-text-center">
+            <a href="#modal-example" uk-toggle uk-tooltip="Address Details"><i class="fa fa-lg fa-home"></i></a>
+            <div id="modal-example" uk-modal>
+              <div class="uk-modal-dialog uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                  <ul class="uk-list uk-list-divider uk-margin-left uk-margin-right">
+                    <li><span>STREET:&nbsp;</span> {{user.address.street || '...'}}</li>
+                    <li><span>SUITE:&nbsp;</span> {{user.address.suite || '...'}}</li>
+                    <li><span>CITY:&nbsp;</span> {{user.address.city || '...'}}</li>
+                    <li><span>ZIP CODE:&nbsp;</span> {{user.address.zipcode || '...'}}</li>
+                  </ul>
+              </div>
+            </div>
+          </td>
+          <td class="uk-text-center">{{user.phone || '...'}}</td>
+          <td class="uk-text-center">{{user.website || '...'}}</td>
+          <td class="uk-text-center">{{user.company.name || '...'}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
